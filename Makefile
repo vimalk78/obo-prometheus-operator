@@ -86,6 +86,7 @@ GO_BUILD_RECIPE=\
 pkgs = $(shell go list ./... | grep -v /test/ | grep -v /contrib/)
 pkgs += $(shell go list $(GO_PKG)/pkg/apis/monitoring...)
 pkgs += $(shell go list $(GO_PKG)/pkg/client...)
+pkgs += $(shell go list $(GO_PKG)/rhobs/test/import...)
 
 .PHONY: all
 all: format generate build test
